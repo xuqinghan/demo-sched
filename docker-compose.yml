@@ -1,0 +1,15 @@
+version: "3.3"
+
+services:
+  api:
+    #restart: always
+    stdin_open: true
+    tty: true
+    build: ./dockerfile
+    image: demo-sched:latest
+    volumes:
+      - ./app:/deploy/app
+    ports:
+      - "80:80"
+    #command: '/bin/bash' 
+    #command: '/usr/bin/supervisord'
